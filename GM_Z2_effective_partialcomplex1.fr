@@ -219,6 +219,27 @@ M$Parameters = {
 	TeX -> Subscript[\[Lambda], 5],
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
+        
+    mu3sq == {
+        ParameterType -> External,
+        BlockName -> POTENTIALPARAM,
+        Value -> 0.1,
+	TeX -> Subscript[\[Mu], 3sq],
+        Description -> "Ext. Scalar Potential"},
+        
+    sa == {
+        ParameterType -> External,
+        Value -> 0,
+        BlockName -> VEV,
+	TeX  -> Subscript[s, \[Alpha]],
+        Description -> "Sine of the mixing angle alpha"},
+        
+    sh == {
+        ParameterType -> External,
+        Value -> 0,
+        BlockName -> VEV,
+	TeX -> Subscript[s,H],
+        Description -> "Sine of theta_H"},
 
 
    (* Internal Parameters *)
@@ -293,12 +314,6 @@ M$Parameters = {
 
 (*BLOCK WITH A SUBSET OF NEW INTERNAL PARAMS *)
 
-    sh == {
-        ParameterType -> Internal,
-        Value -> tanth/Sqrt[1 + tanth^2],
-	TeX -> Subscript[s,H],
-        Description -> "Sine of theta_H"},
-
     ch == {
         ParameterType -> Internal,
         Value -> Sqrt[1-sh^2],
@@ -371,52 +386,32 @@ M$Parameters = {
 
     MH3 == {
         ParameterType -> Internal,
-        Value -> Sqrt[(lam5/2) v^2 ],
+        Value -> Sqrt[1/2 (2 mu3sq +4 lam2 vphi^2- lam5 vphi^2)],
         TeX  -> Subscript[M, 3],
         Description -> "SU(2)_C triplet mass"},
 
     MH5 == {
         ParameterType -> Internal,
-        Value -> Sqrt[(3/2) lam5 vphi^2 + 8 lam3 vchi^2 ] ,
+        Value -> Sqrt[1/2 (2 mu3sq +4 lam2 vphi^2+ lam5 vphi^2)] ,
         TeX  -> Subscript[M, 5],
         Description -> "SU(2)_C fiveplet mass"},
-
-
-    Mat12sq == {
-        ParameterType -> Internal,
-        Value -> (Sqrt[3]/2) vphi ( 4 (2 lam2 - lam5) vchi) ,
-        Description -> "Singlet Scalar Mass Matrix Element"},
-
-    Mat22sq == {
-        ParameterType -> Internal,
-        Value -> 8(lam3 + 3 lam4) vchi^2,
-        Description -> "Singlet Scalar Mass Matrix Element"},
 
 
     lam1 == {
         ParameterType -> Internal,
         BlockName -> POTENTIALPARAM,
-        Value -> (1/(8 vphi^2))(Mh^2 + Mat12sq^2/(Mat22sq - Mh^2)),
+        Value ->  (1/(8 vphi^2))(Mh^2 ),
 	TeX -> Subscript[\[Lambda],1],
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
 
-    Mat11sq == {
-        ParameterType -> Internal,
-        Value -> 8 lam1 vphi^2,
-        Description -> "Singlet Scalar Mass Matrix Element"}, 
 
     MH == {
         ParameterType -> Internal,
-        Value -> Sqrt[Mat11sq + Mat22sq - Mh^2],
+        Value -> Sqrt[mu3sq +2 lam2 vphi^2- lam5 vphi^2],
         TeX  -> Subscript[M, H],
         Description -> " mass of the other higgs that is lighter/heavier than the 125 GeV resonance "},
 
-   sa == {
-        ParameterType -> Internal,
-        Value -> Sin[0.5 ArcSin[2 Mat12sq/(MH^2 - Mh^2)]],
-	TeX  -> Subscript[s, \[Alpha]],
-        Description -> "Sine of the mixing angle alpha"},
 
     ca == {
         ParameterType -> Internal,
@@ -426,13 +421,9 @@ M$Parameters = {
 
     mu2sq == {
         ParameterType -> Internal,
-        Value -> -4 lam1 vphi^2 -3(2 lam2 - lam5) vchi^2,
+        Value -> -4 lam1 vphi^2 ,
         Description -> "Ext. Scalar Potential (parameter \\mu_2^2)"},
 
-    mu3sq == {
-        ParameterType -> Internal,
-        Value -> -(2 lam2 - lam5)vphi^2 - 4(lam3 + 3 lam4) vchi^2 ,
-        Description -> "Ext. Scalar Potential (parameter \\mu_3^2)"}
 
 (* END OF NEW INT. PARAMS *)
 
