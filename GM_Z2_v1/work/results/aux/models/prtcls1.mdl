@@ -1,0 +1,26 @@
+GM_Z2_v1
+ Particles
+ Full  name  |A          |A+         | number |2*spin| mass          |width          |color|aux|>LaTex(A)<|>LaTeX(A+)   <|
+Electron-neut|ve         |ve~        |12      |1     |0              |0              |1    |0  |ve        |ve~           |
+Mu-neutrino  |vm         |vm~        |14      |1     |0              |0              |1    |0  |vm        |vm~           |
+Tau-neutrino |vt         |vt~        |16      |1     |0              |0              |1    |0  |vt        |vt~           |
+Electron     |e-         |e+         |11      |1     |0              |0              |1    |-3 |e-        |e+            |
+Muon         |m-         |m+         |13      |1     |MM             |0              |1    |-3 |m-        |m+            |
+Tau          |tt-        |tt+        |15      |1     |MTA            |0              |1    |-3 |tt-       |tt+           |
+u-quark      |u          |u~         |2       |1     |0              |0              |3    |2  |u         |u~            |
+c-quark      |c          |c~         |4       |1     |0              |0              |3    |2  |c         |c~            |
+t-quark      |t          |t~         |6       |1     |MT             |!WT            |3    |2  |t         |t~            |
+d-quark      |d          |d~         |1       |1     |0              |0              |3    |-1 |d         |d~            |
+s-quark      |s          |s~         |3       |1     |0              |0              |3    |-1 |s         |s~            |
+b-quark      |b          |b~         |5       |1     |MB             |0              |3    |-1 |b         |b~            |
+Photon       |A          |A          |22      |2     |0              |0              |1    |G  |A         |A             |
+Z            |Z          |Z          |23      |2     |MZ             |!WZ            |1    |G  |Z         |Z             |
+W            |W+         |W-         |24      |2     |MW             |!WW            |1    |G  |W+        |W-            |
+G            |G          |G          |21      |2     |0              |0              |8    |G  |G         |G             |
+h            |h          |h          |25      |0     |Mh             |!Wh            |1    |0  |h         |h             |
+~H           |~H         |~H         |252     |0     |MH             |!WH            |1    |0  |~H        |~H            |
+H3p          |H3p        |H3p~       |253     |0     |MH3            |!WH3p          |1    |3  |H3p       |H3p~          |
+~H3z         |~H3z       |~H3z       |254     |0     |MH3            |!WH3z          |1    |0  |~H3z      |~H3z          |
+H5pp         |H5pp       |H5pp~      |255     |0     |MH5            |!WH5pp         |1    |6  |H5pp      |H5pp~         |
+H5p          |H5p        |H5p~       |256     |0     |MH5            |!WH5p          |1    |3  |H5p       |H5p~          |
+~H5z         |~H5z       |~H5z       |257     |0     |MH5            |!WH5z          |1    |0  |~H5z      |~H5z          |
