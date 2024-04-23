@@ -737,10 +737,11 @@ S[4] ==  {
         PropagatorLabel -> "H",
         PropagatorType -> D,
         PropagatorArrow -> None,
+        ParticleName ->"~H",
         PDG -> 252,
         TeXParticleName -> "H",
         TeXClassName -> "H",
-        FullName -> "H" },
+        FullName -> "~H" },
 
 S[5] ==  {
         ClassName -> H3p,
@@ -768,10 +769,11 @@ S[6] == {
         PropagatorLabel -> "H3z",
         PropagatorType -> D,
         PropagatorArrow -> None,
+        ParticleName -> "~H3z",
         PDG -> 254,
         TeXParticleName -> "H_3^0",
         TeXClassName -> "H_3^0",
-        FullName -> "H3z" },
+        FullName -> "~H3z" },
 S[7] ==  {
         ClassName -> H5pp,
         SelfConjugate -> False,
@@ -816,10 +818,11 @@ S[9] == {
         PropagatorLabel -> "H5z",
         PropagatorType -> D,
         PropagatorArrow -> None,
+        ParticleName -> "~H5z",
         PDG -> 257,
         TeXParticleName -> "H_5^0",
         TeXClassName -> "H_5^0",
-        FullName -> "H5z" }
+        FullName -> "~H5z" }
 
 }
 
