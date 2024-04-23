@@ -1045,39 +1045,6 @@ LScKin :=1/2 Tr[(Dc2bar[PHIdag, mu]).Dc2[PHI, mu]] +
 
 LScalar := LScPot + LScKin;
 
-(*********Effective Vertexs*********)
-
-LHWGaC := Block[{mu,nu,rho,alp,beta,effeven,effodd,eff},
-   effeven = (ME[mu,nu]del[Wbar[nu],rho] del[A[mu],rho] - del[Wbar[nu],mu] del[A[mu],nu])((RxH5PWGA + I IxH5PWGA) H5p + (RxH3PWGA+I IxH3PWGA) H3p);
-   effodd = I Eps[mu,nu,alp,beta] del[Wbar[nu],alp] del[A[mu],beta] ((RxH5PWGATILDE + I IxH5PWGATILDE) H5p + (RxH3PWGATILDE + I IxH3PWGATILDE ) H3p);
-   eff = effeven + effodd;
-   eff+HC[eff]
-];
-
-LHGAGAC := Block[{effeven,effodd,eff,mu,nu,rho,alp,beta},
-    effeven = 1/2 (ME[mu,nu]del[A[nu],rho] del[A[mu],rho] - del[A[nu],mu] del[A[mu],nu])(H5NGAGA H5z + HHGAGA H + HLGAGA h);
-    effodd = -1/2 Eps[mu,nu,alp,beta] del[A[nu],alp] del[A[mu],beta] H3NGAGA H3z;
-    eff = 1/2 effeven + 1/2 effodd;
-    eff + HC[eff]
-];
-
-
-LHZGAC := Block[{effeven,effodd,eff,mu,nu,rho,alp,beta},
-    effeven = (ME[mu,nu]del[Z[nu],rho] del[A[mu],rho] - del[Z[nu],mu] del[A[mu],nu])(H5NZGA H5z + HHZGA H + HLZGA h);
-    effodd =  - Eps[mu,nu,alp,beta] del[Z[nu],alp] del[A[mu],beta] H3NZGA H3z;
-    eff = 1/2 effeven + 1/2 effodd;
-    eff+HC[eff]
-];
-
-
-LHGGC := Block[{effeven,effodd,eff,mu,nu,rho,alp,beta,a1},
-    effeven = 1/2 (ME[mu,nu]del[G[nu,a1],rho] del[G[mu,a1],rho] - del[G[nu,a1],mu] del[G[mu,a1],nu])(HHGG H + HLGG h);
-    effodd = -1/2 Eps[mu,nu,alp,beta] del[G[nu,a1],alp] del[G[mu,a1],beta] H3NGG H3z;
-    eff = 1/2 effeven + 1/2 effodd;
-    eff+HC[eff]
-];
-
 
 (*********Total GM Lagrangian*******)
  LGM := LGauge + LFermions + LYukawa  + LGhost + LScalar;  
- LGMeffC := LHWGaC + LHGAGAC + LHZGAC + LHGGC;
