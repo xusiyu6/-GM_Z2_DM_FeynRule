@@ -856,14 +856,7 @@ PHIdag := If[FeynmanGauge,PHIdagtemp,PHIdagtemp/.ugauge];
 X := If[FeynmanGauge,Xtemp,Xtemp/.ugauge];
 Xdag := If[FeynmanGauge,Xdagtemp,Xdagtemp/.ugauge];
 
-(* Matrix that rotates X to Cartesian basis *)
-MatU := {{ -1/Sqrt[2], 0,1/Sqrt[2]},
-         { -I/Sqrt[2],0, -I/Sqrt[2]},
-         {0,1,0}};
-  
-MatUdag := {{ -1/Sqrt[2], I/Sqrt[2],0},
-                {0,0,1},
-                {1/Sqrt[2], I/Sqrt[2],0}};
+
 
 (* Generators of SU(2) doublet representation  *)
 t2 = Table[{{0,0},{0,0}},{itemp,1,3}];
@@ -1016,11 +1009,7 @@ LGhost := If[FeynmanGauge,
         Potlam4 := (Tr[Xdag.X])^2;
         Potlam5 := Sum[Tr[PHIdag.t2[[a]].PHI.t2[[b]]] Tr[Xdag.t3[[a]].X.t3[[b]]],{a,1,3},{b,1,3}];
 
-        PotM1 := Sum[Tr[PHIdag.t2[[a]].PHI.t2[[b]]] MatU[[a, c]] X[[c, d]] MatUdag[[d,
-     b]], {a, 1, 3}, {b, 1, 3}, {c, 1, 3}, {d, 1, 3}];
-        PotM2 := Sum[Tr[Xdag.t3[[a]].X.t3[[b]]] MatU[[a, c]] X[[c, d]] MatUdag[[d,
-     b]], {a, 1, 3}, {b, 1, 3}, {c, 1, 3}, {d, 1, 3}];
-
+ 
    ScPot := (mu2sq/2) Potmu2 +
           (mu3sq/2) Potmu3 +
           lam1 Potlam1 +
