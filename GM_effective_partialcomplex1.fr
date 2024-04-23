@@ -1,5 +1,5 @@
 (**************************************************************************************************************)
-(******                       This is the FeynRules mod-file for the Georgi-Machacek Z2 model            ******)
+(******                       This is the FeynRules mod-file for the Georgi-Machacek model                ******)
 (******                                                                                                   ******)
 (******                          Authors: Katy Hartling, Kunal Kumar, Heather E. Logan, Yongcheng Wu      ******)
 (******                                                                                                   ******)
@@ -13,7 +13,7 @@
 (***************************************************************************************************************)
 
 
-M$ModelName = "GM_Z2_v1";
+M$ModelName = "GM";
 
 M$Information = {Authors -> {"K. Hartling", "K. Kumar","H. Logan","Y. Wu"}, 
              Version -> "1.2.1",
@@ -219,28 +219,186 @@ M$Parameters = {
 	TeX -> Subscript[\[Lambda], 5],
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
-        
-    mu3sq == {
+
+    M1coeff == {
         ParameterType -> External,
         BlockName -> POTENTIALPARAM,
-        Value -> 0.1,
-	TeX -> Subscript[\[Mu], 3sq],
-        Description -> "Ext. Scalar Potential"},
-        
-    sa == {
-        ParameterType -> External,
-        Value -> 0,
-        BlockName -> VEV,
-	TeX  -> Subscript[s, \[Alpha]],
-        Description -> "Sine of the mixing angle alpha"},
-        
-    sh == {
-        ParameterType -> External,
-        Value -> 0,
-        BlockName -> VEV,
-	TeX -> Subscript[s,H],
-        Description -> "Sine of theta_H"},
+        Value -> 100,
+	TeX -> Subscript[M, 1],
+        InteractionOrder -> {QED,1},
+        Description -> "Ext. Scalar Potential (parameter M1)"},
 
+     M2coeff == {
+        ParameterType -> External,
+        BlockName -> POTENTIALPARAM,
+        Value -> 100,
+	TeX -> Subscript[M, 2],
+        InteractionOrder -> {QED,1},
+        Description -> "Ext. Scalar Potential (parameter M2)"},
+
+     tanth == {
+        ParameterType -> External,
+        BlockName -> VEV,
+        Value -> 0.1,
+	TeX -> Subscript[t, H],
+        Description -> "tan(theta_H)"},
+
+(* Effective vertex EXTERNAL PARAMETERS *)
+(* Real Part *)
+    RxH5PWGA == {
+    ParameterType -> External,
+        BlockName -> RExCHARGEDFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {1},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H5WGa effective vertex"
+    },
+    RxH5PWGATILDE == {
+    ParameterType -> External,
+        BlockName -> RExCHARGEDFORMFACTORS,
+        Value -> 0.0,
+        OrderBlock -> {2},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H5WGa effective vertex, For debug only."
+    },
+    RxH3PWGA == {
+    ParameterType -> External,
+        BlockName -> RExCHARGEDFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {3},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3WGa effective vertex"
+    },
+    RxH3PWGATILDE == {
+    ParameterType -> External,
+        BlockName -> RExCHARGEDFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {4},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3WGaTilde effective vertex"
+    },
+    H5NGAGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {1},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H5NGAGA effective vertex"
+    },
+    H5NZGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {2},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H5NZGA effective vertex"
+    },
+    H3NGAGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {3},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3NGAGA effective vertex"
+    },
+    H3NZGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {4},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3NZGA effective vertex"
+    },
+    H3NGG == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {5},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3NGG effective vertex"
+    },
+    HHGAGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {6},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for HHGAGA effective vertex"
+    },
+    HHZGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {7},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for HHZGA effective vertex"
+    },
+    HHGG == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {8},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for HHGG effective vertex"
+    },
+    HLGAGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {9},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for HLGAGA effective vertex"
+    },
+    HLZGA == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {10},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for HLZGA effective vertex"
+    },
+    HLGG == {
+    ParameterType -> External,
+        BlockName -> NEUTRALFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {11},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for HLGG effective vertex"
+    },
+
+(* Imaginary Part *)
+    IxH5PWGA == {
+    ParameterType -> External,
+        BlockName -> IMxCHARGEDFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {1},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H5WGa effective vertex"
+    },
+    IxH5PWGATILDE == {
+        ParameterType -> External,
+        BlockName -> IMxCHARGEDFORMFACTORS,
+        Value -> 0.0,
+        OrderBlock -> {2},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H5WGa effective vertex, For debug only."
+    },
+    IxH3PWGA == {
+    ParameterType -> External,
+        BlockName -> IMxCHARGEDFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {3},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3WGa effective vertex"
+    },
+    IxH3PWGATILDE == {
+    ParameterType -> External,
+        BlockName -> IMxCHARGEDFORMFACTORS,
+        Value -> 0.01,
+        OrderBlock -> {4},
+        InteractionOrder -> {Eff,1},
+        Description -> "Scalar Form Factor for H3WGaTilde effective vertex"
+    },
 
    (* Internal Parameters *)
 
@@ -314,6 +472,12 @@ M$Parameters = {
 
 (*BLOCK WITH A SUBSET OF NEW INTERNAL PARAMS *)
 
+    sh == {
+        ParameterType -> Internal,
+        Value -> tanth/Sqrt[1 + tanth^2],
+	TeX -> Subscript[s,H],
+        Description -> "Sine of theta_H"},
+
     ch == {
         ParameterType -> Internal,
         Value -> Sqrt[1-sh^2],
@@ -321,11 +485,16 @@ M$Parameters = {
         Description -> "Cosine of theta_H"},
 
 
-      
+      vchi == {
+        ParameterType -> Internal,
+        Value -> sh/Sqrt[8 Sqrt[2]Gf],
+	TeX -> Subscript[v,\[Chi]],
+        InteractionOrder -> {QED,-1},
+        Description -> "Triplet vev"},
 
       vphi == {
         ParameterType -> Internal,
-        Value -> Sqrt[ Sqrt[2]Gf],
+        Value -> 2 Sqrt[2] vchi/tanth,
 	TeX -> Subscript[v,\[Phi]],
         InteractionOrder -> {QED,-1},
         Description -> "Doublet vev"},
@@ -386,32 +555,52 @@ M$Parameters = {
 
     MH3 == {
         ParameterType -> Internal,
-        Value -> Sqrt[1/2 (2 mu3sq +4 lam2 vphi^2- lam5 vphi^2)],
+        Value -> Sqrt[(M1coeff/(4 vchi) + lam5/2) v^2 ],
         TeX  -> Subscript[M, 3],
         Description -> "SU(2)_C triplet mass"},
 
     MH5 == {
         ParameterType -> Internal,
-        Value -> Sqrt[1/2 (2 mu3sq +4 lam2 vphi^2+ lam5 vphi^2)] ,
+        Value -> Sqrt[ M1coeff vphi^2 /(4 vchi) + 12 M2coeff vchi + (3/2) lam5 vphi^2 + 8 lam3 vchi^2 ] ,
         TeX  -> Subscript[M, 5],
         Description -> "SU(2)_C fiveplet mass"},
+
+
+    Mat12sq == {
+        ParameterType -> Internal,
+        Value -> (Sqrt[3]/2) vphi (-M1coeff + 4 (2 lam2 - lam5) vchi) ,
+        Description -> "Singlet Scalar Mass Matrix Element"},
+
+    Mat22sq == {
+        ParameterType -> Internal,
+        Value -> M1coeff vphi^2/(4 vchi) - 6 M2coeff vchi + 8(lam3 + 3 lam4) vchi^2,
+        Description -> "Singlet Scalar Mass Matrix Element"},
 
 
     lam1 == {
         ParameterType -> Internal,
         BlockName -> POTENTIALPARAM,
-        Value ->  (1/(8 vphi^2))(Mh^2 ),
+        Value -> (1/(8 vphi^2))(Mh^2 + Mat12sq^2/(Mat22sq - Mh^2)),
 	TeX -> Subscript[\[Lambda],1],
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
 
+    Mat11sq == {
+        ParameterType -> Internal,
+        Value -> 8 lam1 vphi^2,
+        Description -> "Singlet Scalar Mass Matrix Element"}, 
 
     MH == {
         ParameterType -> Internal,
-        Value -> Sqrt[mu3sq +2 lam2 vphi^2- lam5 vphi^2],
+        Value -> Sqrt[Mat11sq + Mat22sq - Mh^2],
         TeX  -> Subscript[M, H],
         Description -> " mass of the other higgs that is lighter/heavier than the 125 GeV resonance "},
 
+   sa == {
+        ParameterType -> Internal,
+        Value -> Sin[0.5 ArcSin[2 Mat12sq/(MH^2 - Mh^2)]],
+	TeX  -> Subscript[s, \[Alpha]],
+        Description -> "Sine of the mixing angle alpha"},
 
     ca == {
         ParameterType -> Internal,
@@ -421,9 +610,13 @@ M$Parameters = {
 
     mu2sq == {
         ParameterType -> Internal,
-        Value -> -4 lam1 vphi^2 ,
-        Description -> "Ext. Scalar Potential (parameter \\mu_2^2)"}
+        Value -> -4 lam1 vphi^2 -3(2 lam2 - lam5) vchi^2 + (3/2) M1coeff vchi,
+        Description -> "Ext. Scalar Potential (parameter \\mu_2^2)"},
 
+    mu3sq == {
+        ParameterType -> Internal,
+        Value -> -(2 lam2 - lam5)vphi^2 - 4(lam3 + 3 lam4) vchi^2 + M1coeff vphi^2/(4 vchi) + 6 M2coeff vchi,
+        Description -> "Ext. Scalar Potential (parameter \\mu_3^2)"}
 
 (* END OF NEW INT. PARAMS *)
 
@@ -733,11 +926,10 @@ S[4] ==  {
         PropagatorLabel -> "H",
         PropagatorType -> D,
         PropagatorArrow -> None,
-        ParticleName ->"~H",
         PDG -> 252,
         TeXParticleName -> "H",
         TeXClassName -> "H",
-        FullName -> "~H" },
+        FullName -> "H" },
 
 S[5] ==  {
         ClassName -> H3p,
@@ -765,11 +957,10 @@ S[6] == {
         PropagatorLabel -> "H3z",
         PropagatorType -> D,
         PropagatorArrow -> None,
-        ParticleName -> "~H3z",
         PDG -> 254,
         TeXParticleName -> "H_3^0",
         TeXClassName -> "H_3^0",
-        FullName -> "~H3z" },
+        FullName -> "H3z" },
 S[7] ==  {
         ClassName -> H5pp,
         SelfConjugate -> False,
@@ -814,11 +1005,10 @@ S[9] == {
         PropagatorLabel -> "H5z",
         PropagatorType -> D,
         PropagatorArrow -> None,
-        ParticleName -> "~H5z",
         PDG -> 257,
         TeXParticleName -> "H_5^0",
         TeXClassName -> "H_5^0",
-        FullName -> "~H5z" }
+        FullName -> "H5z" }
 
 }
 
@@ -833,17 +1023,17 @@ PHIdagtemp := {{(vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])(ch G0 - sh H3z), -(ch
            {-(ch(-Gpbar) - sh (-H3pbar)), (vphi + ca h + sa H)/Sqrt[2] - (I/Sqrt[2])(ch G0 - sh H3z)}};
 
 Xtemp := {{(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)
-                                    - (I/Sqrt[2])(sh G0 + ch H3z)  , (sh/Sqrt[2])Gp + (ch/Sqrt[2] H3p -(1/Sqrt[2])H5p), H5pp},
-      {(sh/Sqrt[2])(-Gpbar) +(ch/Sqrt[2])(-H3pbar) + (1/Sqrt[2])(-H5pbar),-(sa/Sqrt[3]) h + (ca/Sqrt[3])H + Sqrt[2/3]H5z ,
+                                    - (I/Sqrt[2])(sh G0 + ch H3z) + vchi , (sh/Sqrt[2])Gp + (ch/Sqrt[2] H3p -(1/Sqrt[2])H5p), H5pp},
+      {(sh/Sqrt[2])(-Gpbar) +(ch/Sqrt[2])(-H3pbar) + (1/Sqrt[2])(-H5pbar),-(sa/Sqrt[3]) h + (ca/Sqrt[3])H + Sqrt[2/3]H5z +vchi,
         (sh/Sqrt[2])Gp +(ch/Sqrt[2])H3p + (1/Sqrt[2])H5p},
-      {H5ppbar,(sh/Sqrt[2])(-Gpbar) + (ch/Sqrt[2] (-H3pbar) +(1/Sqrt[2])(H5pbar)),(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3]   ca H - Sqrt[1/3] H5z)  + (I/Sqrt[2])(sh G0 + ch H3z) }};
+      {H5ppbar,(sh/Sqrt[2])(-Gpbar) + (ch/Sqrt[2] (-H3pbar) +(1/Sqrt[2])(H5pbar)),(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3]   ca H - Sqrt[1/3] H5z)  + (I/Sqrt[2])(sh G0 + ch H3z) + vchi}};
 
-Xdagtemp := {{(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)  + (I/Sqrt[2])(sh G0 + ch H3z) ,-((sh/Sqrt[2])Gp +(ch/Sqrt[2])H3p + (1/Sqrt[2])H5p), H5pp },
-         {-((sh/Sqrt[2])(-Gpbar) + (ch/Sqrt[2](- H3pbar) -(1/Sqrt[2])(-H5pbar))), -(sa/Sqrt[3]) h + (ca/Sqrt[3])H + Sqrt[2/3]H5z,
+Xdagtemp := {{(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)  + (I/Sqrt[2])(sh G0 + ch H3z) +vchi ,-((sh/Sqrt[2])Gp +(ch/Sqrt[2])H3p + (1/Sqrt[2])H5p), H5pp },
+         {-((sh/Sqrt[2])(-Gpbar) + (ch/Sqrt[2](- H3pbar) -(1/Sqrt[2])(-H5pbar))), -(sa/Sqrt[3]) h + (ca/Sqrt[3])H + Sqrt[2/3]H5z + vchi,
           -((sh/Sqrt[2])Gp + (ch/Sqrt[2] H3p -(1/Sqrt[2])H5p))},
          {H5ppbar,-((sh/Sqrt[2])(-Gpbar) +(ch/Sqrt[2])(-H3pbar) + (1/Sqrt[2])(-H5pbar)),
           (1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)
-                                    - (I/Sqrt[2])(sh G0 + ch H3z) }};
+                                    - (I/Sqrt[2])(sh G0 + ch H3z) + vchi}};
 
 (* Defining bi-doublet PHI and bi-triplet X for Feynman gauge or Unitary Gauge  *)
 
@@ -1023,7 +1213,9 @@ LGhost := If[FeynmanGauge,
           lam2 Potlam2 +
           lam3 Potlam3 +
           lam4 Potlam4 -
-          lam5 Potlam5 ;
+          lam5 Potlam5 -
+          M1coeff PotM1 -
+          M2coeff PotM2;
     
    LScPot := -ScPot;
 
@@ -1052,5 +1244,39 @@ LScKin :=1/2 Tr[(Dc2bar[PHIdag, mu]).Dc2[PHI, mu]] +
 
 LScalar := LScPot + LScKin;
 
+(*********Effective Vertexs*********)
+
+LHWGaC := Block[{mu,nu,rho,alp,beta,effeven,effodd,eff},
+   effeven = (ME[mu,nu]del[Wbar[nu],rho] del[A[mu],rho] - del[Wbar[nu],mu] del[A[mu],nu])((RxH5PWGA + I IxH5PWGA) H5p + (RxH3PWGA+I IxH3PWGA) H3p);
+   effodd = I Eps[mu,nu,alp,beta] del[Wbar[nu],alp] del[A[mu],beta] ((RxH5PWGATILDE + I IxH5PWGATILDE) H5p + (RxH3PWGATILDE + I IxH3PWGATILDE ) H3p);
+   eff = effeven + effodd;
+   eff+HC[eff]
+];
+
+LHGAGAC := Block[{effeven,effodd,eff,mu,nu,rho,alp,beta},
+    effeven = 1/2 (ME[mu,nu]del[A[nu],rho] del[A[mu],rho] - del[A[nu],mu] del[A[mu],nu])(H5NGAGA H5z + HHGAGA H + HLGAGA h);
+    effodd = -1/2 Eps[mu,nu,alp,beta] del[A[nu],alp] del[A[mu],beta] H3NGAGA H3z;
+    eff = 1/2 effeven + 1/2 effodd;
+    eff + HC[eff]
+];
+
+
+LHZGAC := Block[{effeven,effodd,eff,mu,nu,rho,alp,beta},
+    effeven = (ME[mu,nu]del[Z[nu],rho] del[A[mu],rho] - del[Z[nu],mu] del[A[mu],nu])(H5NZGA H5z + HHZGA H + HLZGA h);
+    effodd =  - Eps[mu,nu,alp,beta] del[Z[nu],alp] del[A[mu],beta] H3NZGA H3z;
+    eff = 1/2 effeven + 1/2 effodd;
+    eff+HC[eff]
+];
+
+
+LHGGC := Block[{effeven,effodd,eff,mu,nu,rho,alp,beta,a1},
+    effeven = 1/2 (ME[mu,nu]del[G[nu,a1],rho] del[G[mu,a1],rho] - del[G[nu,a1],mu] del[G[mu,a1],nu])(HHGG H + HLGG h);
+    effodd = -1/2 Eps[mu,nu,alp,beta] del[G[nu,a1],alp] del[G[mu,a1],beta] H3NGG H3z;
+    eff = 1/2 effeven + 1/2 effodd;
+    eff+HC[eff]
+];
+
+
 (*********Total GM Lagrangian*******)
  LGM := LGauge + LFermions + LYukawa  + LGhost + LScalar;  
+ LGMeffC := LHWGaC + LHGAGAC + LHZGAC + LHGGC;
