@@ -13,7 +13,7 @@
 (***************************************************************************************************************)
 
 
-M$ModelName = "GM_Z2";
+M$ModelName = "GM_Z2_v1";
 
 M$Information = {Authors -> {"K. Hartling", "K. Kumar","H. Logan","Y. Wu"}, 
              Version -> "1.2.1",
@@ -422,7 +422,7 @@ M$Parameters = {
     mu2sq == {
         ParameterType -> Internal,
         Value -> -4 lam1 vphi^2 ,
-        Description -> "Ext. Scalar Potential (parameter \\mu_2^2)"},
+        Description -> "Ext. Scalar Potential (parameter \\mu_2^2)"}
 
 
 (* END OF NEW INT. PARAMS *)
