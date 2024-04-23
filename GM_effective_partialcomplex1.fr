@@ -1,7 +1,7 @@
 (**************************************************************************************************************)
-(******                       This is the FeynRules mod-file for the Georgi-Machacek model                ******)
+(******    This is the FeynRules mod-file for the Georgi-Machacek Z2 including only v1 model             ******)
 (******                                                                                                   ******)
-(******                          Authors: Katy Hartling, Kunal Kumar, Heather E. Logan, Yongcheng Wu      ******)
+(******           Authors: Katy Hartling, Kunal Kumar, Heather E. Logan, Yongcheng Wu, Siyu Xu            ******)
 (******                                                                                                   ******)
 (****** Choose whether Feynman gauge is desired.                                                          ******)
 (****** If set to False, unitary gauge is assumed.                                                          ****)
@@ -13,11 +13,11 @@
 (***************************************************************************************************************)
 
 
-M$ModelName = "GM";
+M$ModelName = "GM_Z2_v1";
 
-M$Information = {Authors -> {"K. Hartling", "K. Kumar","H. Logan","Y. Wu"}, 
+M$Information = {Authors -> {"K. Hartling", "K. Kumar","H. Logan","Y. Wu","S. Xu"}, 
              Version -> "1.2.1",
-             Date -> "09. 13. 2018",
+             Date -> "4. 23. 2024",
              Institutions -> {"Carleton University"},
              Emails -> {"khally@physics.carleton.ca","kkumar@physics.carleton.ca","logan@physics.carleton.ca","ycwu@physics.carleton.ca"},
              URLs -> "https://feynrules.irmp.ucl.ac.be/wiki/GeorgiMachacekModel"};
@@ -220,21 +220,6 @@ M$Parameters = {
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
 
-    M1coeff == {
-        ParameterType -> External,
-        BlockName -> POTENTIALPARAM,
-        Value -> 100,
-	TeX -> Subscript[M, 1],
-        InteractionOrder -> {QED,1},
-        Description -> "Ext. Scalar Potential (parameter M1)"},
-
-     M2coeff == {
-        ParameterType -> External,
-        BlockName -> POTENTIALPARAM,
-        Value -> 100,
-	TeX -> Subscript[M, 2],
-        InteractionOrder -> {QED,1},
-        Description -> "Ext. Scalar Potential (parameter M2)"},
 
      tanth == {
         ParameterType -> External,
@@ -243,162 +228,6 @@ M$Parameters = {
 	TeX -> Subscript[t, H],
         Description -> "tan(theta_H)"},
 
-(* Effective vertex EXTERNAL PARAMETERS *)
-(* Real Part *)
-    RxH5PWGA == {
-    ParameterType -> External,
-        BlockName -> RExCHARGEDFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {1},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H5WGa effective vertex"
-    },
-    RxH5PWGATILDE == {
-    ParameterType -> External,
-        BlockName -> RExCHARGEDFORMFACTORS,
-        Value -> 0.0,
-        OrderBlock -> {2},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H5WGa effective vertex, For debug only."
-    },
-    RxH3PWGA == {
-    ParameterType -> External,
-        BlockName -> RExCHARGEDFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {3},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3WGa effective vertex"
-    },
-    RxH3PWGATILDE == {
-    ParameterType -> External,
-        BlockName -> RExCHARGEDFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {4},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3WGaTilde effective vertex"
-    },
-    H5NGAGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {1},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H5NGAGA effective vertex"
-    },
-    H5NZGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {2},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H5NZGA effective vertex"
-    },
-    H3NGAGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {3},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3NGAGA effective vertex"
-    },
-    H3NZGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {4},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3NZGA effective vertex"
-    },
-    H3NGG == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {5},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3NGG effective vertex"
-    },
-    HHGAGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {6},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for HHGAGA effective vertex"
-    },
-    HHZGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {7},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for HHZGA effective vertex"
-    },
-    HHGG == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {8},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for HHGG effective vertex"
-    },
-    HLGAGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {9},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for HLGAGA effective vertex"
-    },
-    HLZGA == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {10},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for HLZGA effective vertex"
-    },
-    HLGG == {
-    ParameterType -> External,
-        BlockName -> NEUTRALFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {11},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for HLGG effective vertex"
-    },
-
-(* Imaginary Part *)
-    IxH5PWGA == {
-    ParameterType -> External,
-        BlockName -> IMxCHARGEDFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {1},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H5WGa effective vertex"
-    },
-    IxH5PWGATILDE == {
-        ParameterType -> External,
-        BlockName -> IMxCHARGEDFORMFACTORS,
-        Value -> 0.0,
-        OrderBlock -> {2},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H5WGa effective vertex, For debug only."
-    },
-    IxH3PWGA == {
-    ParameterType -> External,
-        BlockName -> IMxCHARGEDFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {3},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3WGa effective vertex"
-    },
-    IxH3PWGATILDE == {
-    ParameterType -> External,
-        BlockName -> IMxCHARGEDFORMFACTORS,
-        Value -> 0.01,
-        OrderBlock -> {4},
-        InteractionOrder -> {Eff,1},
-        Description -> "Scalar Form Factor for H3WGaTilde effective vertex"
-    },
 
    (* Internal Parameters *)
 
@@ -555,25 +384,25 @@ M$Parameters = {
 
     MH3 == {
         ParameterType -> Internal,
-        Value -> Sqrt[(M1coeff/(4 vchi) + lam5/2) v^2 ],
+        Value -> Sqrt[(lam5/2) v^2 ],
         TeX  -> Subscript[M, 3],
         Description -> "SU(2)_C triplet mass"},
 
     MH5 == {
         ParameterType -> Internal,
-        Value -> Sqrt[ M1coeff vphi^2 /(4 vchi) + 12 M2coeff vchi + (3/2) lam5 vphi^2 + 8 lam3 vchi^2 ] ,
+        Value -> Sqrt[  (3/2) lam5 vphi^2 + 8 lam3 vchi^2 ] ,
         TeX  -> Subscript[M, 5],
         Description -> "SU(2)_C fiveplet mass"},
 
 
     Mat12sq == {
         ParameterType -> Internal,
-        Value -> (Sqrt[3]/2) vphi (-M1coeff + 4 (2 lam2 - lam5) vchi) ,
+        Value -> (Sqrt[3]/2) vphi ( 4 (2 lam2 - lam5) vchi) ,
         Description -> "Singlet Scalar Mass Matrix Element"},
 
     Mat22sq == {
         ParameterType -> Internal,
-        Value -> M1coeff vphi^2/(4 vchi) - 6 M2coeff vchi + 8(lam3 + 3 lam4) vchi^2,
+        Value ->   8(lam3 + 3 lam4) vchi^2,
         Description -> "Singlet Scalar Mass Matrix Element"},
 
 
@@ -610,12 +439,12 @@ M$Parameters = {
 
     mu2sq == {
         ParameterType -> Internal,
-        Value -> -4 lam1 vphi^2 -3(2 lam2 - lam5) vchi^2 + (3/2) M1coeff vchi,
+        Value -> -4 lam1 vphi^2 -3(2 lam2 - lam5) vchi^2,
         Description -> "Ext. Scalar Potential (parameter \\mu_2^2)"},
 
     mu3sq == {
         ParameterType -> Internal,
-        Value -> -(2 lam2 - lam5)vphi^2 - 4(lam3 + 3 lam4) vchi^2 + M1coeff vphi^2/(4 vchi) + 6 M2coeff vchi,
+        Value -> -(2 lam2 - lam5)vphi^2 - 4(lam3 + 3 lam4) vchi^2 ,
         Description -> "Ext. Scalar Potential (parameter \\mu_3^2)"}
 
 (* END OF NEW INT. PARAMS *)
@@ -1213,9 +1042,7 @@ LGhost := If[FeynmanGauge,
           lam2 Potlam2 +
           lam3 Potlam3 +
           lam4 Potlam4 -
-          lam5 Potlam5 -
-          M1coeff PotM1 -
-          M2coeff PotM2;
+          lam5 Potlam5 ;
     
    LScPot := -ScPot;
 
