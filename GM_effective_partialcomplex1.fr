@@ -330,7 +330,7 @@ M$Parameters = {
 
     vphi == {
         ParameterType -> Internal,
-        Value ->  Sqrt[ Sqrt[2]Gf],
+        Value ->  1/Sqrt[Sqrt[2]Gf],
 	TeX -> Subscript[v,\[Phi]],
         InteractionOrder -> {QED,-1},
         Description -> "Doublet vev"},
@@ -1043,7 +1043,7 @@ Dc3bar[f_, mu_] := -I del[f, mu] - ee/cw B[mu] (PMVec3[[3]].f) +
 LScKin :=1/2 Tr[(Dc2bar[PHIdag, mu]).Dc2[PHI, mu]] +
  1/2 Tr[(Dc3bar[Xdag, mu]).Dc3[X, mu]];	
 
-LScalar := LScPot + LScKin;
+LScalar := LScPot + LScKin;6
 
 
 (*********Total GM Lagrangian*******)
