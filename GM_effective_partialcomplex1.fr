@@ -219,14 +219,6 @@ M$Parameters = {
 	TeX -> Subscript[\[Lambda], 5],
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
-
-
-     tanth == {
-        ParameterType -> External,
-        BlockName -> VEV,
-        Value -> 0,
-	TeX -> Subscript[t, H],
-        Description -> "tan(theta_H)"},
         
      mu3sq == {
         ParameterType -> External,
@@ -234,14 +226,6 @@ M$Parameters = {
         Value -> 0.1,
 	TeX -> Subscript[\[Mu], 3sq],
         Description -> "Ext. Scalar Potential"},
-        
-     sa == {
-        ParameterType -> External,
-        Value -> 0,
-        BlockName -> VEV,
-	TeX  -> Subscript[s, \[Alpha]],
-        Description -> "Sine of the mixing angle alpha"},
-
 
    (* Internal Parameters *)
 
@@ -314,19 +298,6 @@ M$Parameters = {
         Description -> "SM Higgs VEV"},
 
 (*BLOCK WITH A SUBSET OF NEW INTERNAL PARAMS *)
-
-    sh == {
-        ParameterType -> Internal,
-        Value -> tanth/Sqrt[1 + tanth^2],
-	TeX -> Subscript[s,H],
-        Description -> "Sine of theta_H"},
-
-    ch == {
-        ParameterType -> Internal,
-        Value -> Sqrt[1-sh^2],
-	TeX -> Subscript[c,H],
-        Description -> "Cosine of theta_H"},
-
 
     vphi == {
         ParameterType -> Internal,
@@ -416,13 +387,6 @@ M$Parameters = {
         Value -> Sqrt[mu3sq +2 lam2 vphi^2- lam5 vphi^2],
         TeX  -> Subscript[M, H],
         Description -> " mass of the other higgs that is lighter/heavier than the 125 GeV resonance "},
-        
-
-    ca == {
-        ParameterType -> Internal,
-        Value -> Sqrt[1-sa^2],
-	 TeX  -> Subscript[c, \[Alpha]],
-        Description -> "Cosine of the mixing angle alpha"},
 
     mu2sq == {
         ParameterType -> Internal,
