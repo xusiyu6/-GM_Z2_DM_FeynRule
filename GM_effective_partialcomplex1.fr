@@ -381,7 +381,6 @@ M$Parameters = {
         InteractionOrder -> {QED,2},
         Description -> "Ext. Scalar Potential"},
 
-
     MH == {
         ParameterType -> Internal,
         Value -> Sqrt[mu3sq +2 lam2 vphi^2- lam5 vphi^2],
@@ -794,24 +793,24 @@ S[9] == {
 ugauge = {Gp->0,Gpbar->0,G0->0};
 
 
-PHItemp := {{(vphi + ca h + sa H)/Sqrt[2] - (I/Sqrt[2])(ch G0 - sh H3z), ch Gp - sh H3p }
-         ,{ch (-Gpbar) -sh (-H3pbar), (vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])(ch G0 - sh H3z)}};
+PHItemp := {{(vphi + h )/Sqrt[2] - (I/Sqrt[2])( G0 ), Gp  }
+         ,{ -Gpbar , (vphi +  h )/Sqrt[2] + (I/Sqrt[2])(G0 )}};
 
-PHIdagtemp := {{(vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])(ch G0 - sh H3z), -(ch Gp - sh H3p)},
-           {-(ch(-Gpbar) - sh (-H3pbar)), (vphi + ca h + sa H)/Sqrt[2] - (I/Sqrt[2])(ch G0 - sh H3z)}};
+PHIdagtemp := {{(vphi + h )/Sqrt[2] + (I/Sqrt[2])(G0 ), -Gp },
+           {Gpbar , (vphi +  h)/Sqrt[2] - (I/Sqrt[2])( G0)}};
 
-Xtemp := {{(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)
-                                    - (I/Sqrt[2])(sh G0 + ch H3z)  , (sh/Sqrt[2])Gp + (ch/Sqrt[2] H3p -(1/Sqrt[2])H5p), H5pp},
-      {(sh/Sqrt[2])(-Gpbar) +(ch/Sqrt[2])(-H3pbar) + (1/Sqrt[2])(-H5pbar),-(sa/Sqrt[3]) h + (ca/Sqrt[3])H + Sqrt[2/3]H5z ,
-        (sh/Sqrt[2])Gp +(ch/Sqrt[2])H3p + (1/Sqrt[2])H5p},
-      {H5ppbar,(sh/Sqrt[2])(-Gpbar) + (ch/Sqrt[2] (-H3pbar) +(1/Sqrt[2])(H5pbar)),(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3]   ca H - Sqrt[1/3] H5z)  + (I/Sqrt[2])(sh G0 + ch H3z) }};
+Xtemp := {{(1/Sqrt[2])( Sqrt[2/3]  H + Sqrt[1/3] H5z)
+                         - (I/Sqrt[2])( H3z)  ,  (1/Sqrt[2] H3p -(1/Sqrt[2])H5p), H5pp},
+      {(1/Sqrt[2])(-H3pbar) + (1/Sqrt[2])(-H5pbar), (1/Sqrt[3])H - Sqrt[2/3]H5z ,
+        (1/Sqrt[2])H3p + (1/Sqrt[2])H5p},
+      {H5ppbar, (1/Sqrt[2] (-H3pbar) +(1/Sqrt[2])(H5pbar)),(1/Sqrt[2])(Sqrt[2/3]H+ Sqrt[1/3]H5z) + (I/Sqrt[2])( H3z) }};
 
-Xdagtemp := {{(1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)  + (I/Sqrt[2])(sh G0 + ch H3z)  ,-((sh/Sqrt[2])Gp +(ch/Sqrt[2])H3p + (1/Sqrt[2])H5p), H5pp },
-         {-((sh/Sqrt[2])(-Gpbar) + (ch/Sqrt[2](- H3pbar) -(1/Sqrt[2])(-H5pbar))), -(sa/Sqrt[3]) h + (ca/Sqrt[3])H + Sqrt[2/3]H5z ,
-          -((sh/Sqrt[2])Gp + (ch/Sqrt[2] H3p -(1/Sqrt[2])H5p))},
-         {H5ppbar,-((sh/Sqrt[2])(-Gpbar) +(ch/Sqrt[2])(-H3pbar) + (1/Sqrt[2])(-H5pbar)),
-          (1/Sqrt[2])(-Sqrt[2/3] sa h + Sqrt[2/3] ca H - Sqrt[1/3] H5z)
-                                    - (I/Sqrt[2])(sh G0 + ch H3z) }};
+Xdagtemp := {{(1/Sqrt[2])( Sqrt[2/3]H + Sqrt[1/3] H5z)  + (I/Sqrt[2])( H3z)  ,-((1/Sqrt[2])H3p + (1/Sqrt[2])H5p), H5pp },
+         {1/Sqrt[2](H3pbar) -(1/Sqrt[2])(H5pbar),  (1/Sqrt[3])H - Sqrt[2/3]H5z ,
+          -((1/Sqrt[2] H3p -(1/Sqrt[2])H5p))},
+         {H5ppbar,(1/Sqrt[2])(H3pbar) + (1/Sqrt[2])(H5pbar),
+          (1/Sqrt[2])( Sqrt[2/3] H + Sqrt[1/3] H5z)
+                                    - (I/Sqrt[2])( H3z) }};
 
 (* Defining bi-doublet PHI and bi-triplet X for Feynman gauge or Unitary Gauge  *)
 
