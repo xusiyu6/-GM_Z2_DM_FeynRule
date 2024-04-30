@@ -894,24 +894,24 @@ t3[[3]]={{1,0,0},{0,0,0},{0,0,-1}};
 LYuk := If[FeynmanGauge,
 
       Module[{s,r,n,m,i},                                                                 -
-              yd[m] CKM[n,m]     uqbar[s,n,i].ProjP[s,r].dq[r,m,i] ( ch Gp -sh H3p)              -
-              yd[n]              dqbar[s,n,i].ProjP[s,r].dq[r,n,i] ((vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])(ch G0 - sh H3z))   -
+              yd[m] CKM[n,m]     uqbar[s,n,i].ProjP[s,r].dq[r,m,i] (  Gp )              -
+              yd[n]              dqbar[s,n,i].ProjP[s,r].dq[r,n,i] ((vphi +  h )/Sqrt[2] + (I/Sqrt[2])( G0 ))   -
 
-              yu[n]              uqbar[s,n,i].ProjP[s,r].uq[r,n,i] ((vphi + ca h + sa H)/Sqrt[2] - (I/Sqrt[2])(ch G0 - sh H3z))   + (*This sign from eps matrix*)
-              yu[m] Conjugate[CKM[m,n]] dqbar[s,n,i].ProjP[s,r].uq[r,m,i] ( ch Gpbar -sh H3pbar)    -
+              yu[n]              uqbar[s,n,i].ProjP[s,r].uq[r,n,i] ((vphi +  h )/Sqrt[2] - (I/Sqrt[2])( G0 ))   + (*This sign from eps matrix*)
+              yu[m] Conjugate[CKM[m,n]] dqbar[s,n,i].ProjP[s,r].uq[r,m,i] (  Gpbar )    -
 
-              yl[n]              vlbar[s,n].ProjP[s,r].l[r,n]  ( ch Gp -sh H3p)               -
-              yl[n]               lbar[s,n].ProjP[s,r].l[r,n]  ((vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])(ch G0 - sh H3z)) 
+              yl[n]              vlbar[s,n].ProjP[s,r].l[r,n]  ( Gp )               -
+              yl[n]               lbar[s,n].ProjP[s,r].l[r,n]  ((vphi +  h)/Sqrt[2] + (I/Sqrt[2])( G0 )) 
            ],
        Module[{s,r,n,m,i},                                                                 -
-              yd[m] CKM[n,m]     uqbar[s,n,i].ProjP[s,r].dq[r,m,i] ( -sh H3p)              -
-              yd[n]              dqbar[s,n,i].ProjP[s,r].dq[r,n,i] ((vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])( - sh H3z))   -
+              yd[m] CKM[n,m]     uqbar[s,n,i].ProjP[s,r].dq[r,m,i] ( 0)              -
+              yd[n]              dqbar[s,n,i].ProjP[s,r].dq[r,n,i] ((vphi +  h )/Sqrt[2])    -
 
-              yu[n]              uqbar[s,n,i].ProjP[s,r].uq[r,n,i] ((vphi + ca h + sa H)/Sqrt[2] - (I/Sqrt[2])( - sh H3z))   + (*This sign from eps matrix*)
-              yu[m] Conjugate[CKM[m,n]] dqbar[s,n,i].ProjP[s,r].uq[r,m,i] (  -sh H3pbar)    -
+              yu[n]              uqbar[s,n,i].ProjP[s,r].uq[r,n,i] ((vphi +  h )/Sqrt[2] )   + (*This sign from eps matrix*)
+              yu[m] Conjugate[CKM[m,n]] dqbar[s,n,i].ProjP[s,r].uq[r,m,i] (0)    -
 
-              yl[n]              vlbar[s,n].ProjP[s,r].l[r,n]  ( -sh H3p)               -
-              yl[n]               lbar[s,n].ProjP[s,r].l[r,n]  ((vphi + ca h + sa H)/Sqrt[2] + (I/Sqrt[2])( - sh H3z)) 
+              yl[n]              vlbar[s,n].ProjP[s,r].l[r,n]  (0)               -
+              yl[n]               lbar[s,n].ProjP[s,r].l[r,n]  ((vphi +  h )/Sqrt[2] ) 
            ]
          ];
 
